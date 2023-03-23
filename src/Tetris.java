@@ -13,6 +13,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import static java.awt.Event.ESCAPE;
+
 public class Tetris extends Application {
 	public static final int MOVE = 25;
 	public static final int SIZE = 25;
@@ -112,6 +114,8 @@ public class Tetris extends Application {
 			case UP:
 				MoveTurn(form);
 				break;
+			case ESCAPE:
+				System.exit(0);
 			}
 		});
 	}
@@ -424,7 +428,7 @@ public class Tetris extends Application {
 					if (node instanceof Rectangle)
 						rects.add(node);
 				}
-				score += 50;
+				score += 100;
 				nrLines++;
 
 				for (Node node : rects) {
